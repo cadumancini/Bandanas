@@ -40,6 +40,11 @@ namespace Bandanas.Controllers
         {
             return View(categorias);
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
         
         [HttpPost]
         [ValidateAntiForgeryToken]
