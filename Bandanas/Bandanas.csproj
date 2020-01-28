@@ -134,6 +134,7 @@
     <Content Include="Views\Tecidos\Index.cshtml" />
     <Content Include="Views\Tecidos\Create.cshtml" />
     <Content Include="Views\Tecidos\Edit.cshtml" />
+    <Content Include="Views\Tecidos\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
