@@ -71,5 +71,27 @@ namespace Bandanas.Controllers
 
             return View(tecido);
         }
+
+        public ActionResult Delete(long? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            Tecido tecido = context.Tecidos.Find(id);
+            if (tecido == null)
+                return HttpNotFound();
+
+            return View(tecido);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(long id)
+        {
+            Tecido tecido = context.Tecidos.Find(id);
+            context.Tecidos.Remove(tecido);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
